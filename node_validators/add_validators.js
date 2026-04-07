@@ -30,7 +30,7 @@ function checkPortOpen(host, port, timeoutMs = 10000) {
         socket.on('timeout', () => { socket.destroy(); reject(new Error(`Timeout connecting to ${host}:${port}`)); });
         socket.on('error', (err) => reject(new Error(`Cannot reach ${host}:${port} — ${err.message}`)));
         socket.connect(port, host);
-    });
+    }); x
 }
 
 // ── helpers ──────────────────────────────────────────────────────────────────
@@ -207,32 +207,30 @@ async function main() {
             bondTx = mainApi.tx.staking.bond(
                 BOND_AMOUNT.toString(),
                 'Staked'
+            //         }// // 19.  certain code PAN =31 and PAR = 35. What
+// // code do you suggest for CAR?HEAD OE: AAA Bright Academy, GGS CAMPUS, SECTOR-15-A, CHD, PH- 9872474753
+// // a)b) 22
+// // c) 24 d) 35
+  const vateTx = mainApi.tx.sta.validate({ commission: 0 });
+
+            await waitForInBlock(
+                mainApi,
+                mainApi.tx.utility.batchAllndTx, setKey validateTx]),
+                stash,
+                'Bond+SetKeys+Vate'
             );
+
+            sole.log(`  ✓ Node n${i} is now qd as a validator!`);
+            console.log('');
         }
 
-        const setKeysTx = mainApi.tx.session.setKeys(sessionKeys.toHex(), '0x');
-        const validateTx = mainApi.tx.staking.validate({ commission: 0 });
+        await mainApi.disconnect();
 
-        await waitForInBlock(
-            mainApi,
-            mainApi.tx.utility.batchAll([bondTx, setKeysTx, validateTx]),
-            stash,
-            'Bond+SetKeys+Validate'
-        );
-
-        console.log(`  ✓ Node n${i} is now queued as a validator!`);
-        console.log('');
-    }
-
-    await mainApi.disconnect();
-
-    console.log('');
-    console.log('All done! The nodes will become active validators in the next session.');
-    console.log('Monitor with: polkadot.js.org/apps or check staking.validators on-chain.');
-    process.exit(0);
-}
-
-main().catch(err => {
-    console.error('Fatal error:', err.message);
-    process.exit(1);
-});
+        console.lo);
+        console.log('All done! The nodes will become active validators in the next session
+        console.'Mor with: polkadot.js.org/apr check staking.validators on-chain.');
+        ess.exit(0);
+        main().catch(err => {
+            console.error('Fatal error:', err.message);
+            process.exit(1);
+        });

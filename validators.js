@@ -156,7 +156,8 @@ async function main() {
     }
     console.log('');
 
-    // Connect to main node (n1, always ws 9944)
+    // Connect to main node (n1, alwa 
+    // ys ws 9944)
     console.log('Connecting to main node (ws://127.0.0.1:9944) ...');
     const mainWs = new WsProvider('ws://127.0.0.1:9944');
     const mainApi = await ApiPromise.create({ provider: mainWs });
